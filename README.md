@@ -10,29 +10,25 @@ uncertainty/reliability by Monte-Carlo) and Excel/Word export.
 > The project lives in a directory whose name contains a space:
 > `"ML Workbench DL/"`. Quote it in every shell command.
 
-
-## Environment
-
-- Python 3.14, PyQt6 6.11, pandas 3.0, numpy 2.5, scikit-learn 1.9,
-  matplotlib 3.11, xgboost, lightgbm, openpyxl …
-- PyTorch 2.14.1 (CPU-only build) for the three neural networks
-- Install from source in two steps, so the torch `--index-url` does not
-  misdirect the base packages:
-
-```sh
-./.venv/bin/pip install -r requirements.txt
-./.venv/bin/pip install -r requirements-dl.txt
-```
-
-
 ## Run from source
 
-Everything is run from this directory so that `import core` and `import gui` resolve:
+First create the virtual environment:
 
 ```sh
-cd "ML Workbench DL"
-./.venv/bin/python app.py                 # the window
-./.venv/bin/python app.py --self-test     # headless end-to-end check (73 checks)
+./setup.sh
+```
+
+Then start the application:
+
+```sh
+./run.sh
+# equivalent to: ./.venv/bin/python app.py
+```
+
+The headless self-test (73 checks) can be run with:
+
+```sh
+QT_QPA_PLATFORM=offscreen ./.venv/bin/python app.py --self-test
 ```
 
 Optional launch flags:
@@ -49,22 +45,31 @@ The environment needs `QT_QPA_PLATFORM=offscreen` when there is no display.
 
 ## Install as a Debian package
 
-A prebuilt package is provided:
-
-- File: `ml-studio_1.0.0_amd64.deb`
-- SHA-256: `1ba5b9af2d842f24546d125bef8890ee0a96d2df3f22b76f71ed730bfb795d79`
-
-Install it on Debian/Ubuntu/Kali with:
+A prebuilt package, `ml-studio_1.0.0_amd64.deb`, may be attached to the GitHub
+Release page for this repository. On Debian/Ubuntu/Kali:
 
 ```sh
 sudo apt install ./ml-studio_1.0.0_amd64.deb
 ```
 
 `apt` pulls in `python3.14` and the required system libraries. After
-installation a `ML Studio` entry appears in the applications menu, and the
-launcher is available at `/usr/bin/ml-studio`. The package is
-self-contained: it ships the bundled Python virtual environment at
-`/opt/mlstudio`, so no other Python packages are needed on the target machine.
+installation a `ML Studio` entry appears in the applications menu and the
+launcher is available at `/usr/bin/ml-studio`. The package is self-contained:
+it ships the bundled Python virtual environment, so no other Python packages
+are needed on the target machine.
+
+## Environment
+
+- Python 3.14, PyQt6 6.11, pandas 3.0, numpy 2.5, scikit-learn 1.9,
+  matplotlib 3.11, xgboost, lightgbm, openpyxl …
+- PyTorch 2.14.1 (CPU-only build) for the three neural networks
+- Install from source in two steps, so the torch `--index-url` does not
+  misdirect the base packages:
+
+```sh
+./.venv/bin/pip install -r requirements.txt
+./.venv/bin/pip install -r requirements-dl.txt
+```
 
 ## Project layout
 
