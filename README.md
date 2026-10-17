@@ -45,8 +45,9 @@ The environment needs `QT_QPA_PLATFORM=offscreen` when there is no display.
 
 ## Install as a Debian package
 
-A prebuilt package, `ml-studio_1.0.0_amd64.deb`, may be attached to the GitHub
-Release page for this repository. On Debian/Ubuntu/Kali:
+A prebuilt package, `ml-studio_1.0.0_amd64.deb`, is attached to the GitHub
+Release page for this repository. Download it.
+On Debian/Ubuntu/Kali:
 
 ```sh
 sudo apt install ./ml-studio_1.0.0_amd64.deb
