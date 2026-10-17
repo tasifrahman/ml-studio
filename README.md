@@ -15,7 +15,7 @@ uncertainty/reliability by Monte-Carlo) and Excel/Word export.
 Everything is run from this directory so that `import core` and `import gui` resolve:
 
 ```sh
-cd "/home/tasifrari/Application/opencode/ML Workbench DL"
+cd "ML Workbench DL"
 ./.venv/bin/python app.py                 # the window
 ./.venv/bin/python app.py --self-test     # headless end-to-end check (73 checks)
 ```
