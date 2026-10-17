@@ -1,0 +1,17 @@
+# Deep-learning extra for this project: CPU-only PyTorch.
+#
+# The default PyPI `torch` wheel for Linux bundles CUDA — 555 MB, plus
+# nvidia-cudnn / nvidia-nccl / triton, several GB of GPU libraries that are
+# useless on this machine (Ryzen 5 7520U, no GPU).  This index serves the
+# CPU-only build instead, which is what we actually want.
+#
+# Install it as a separate step, after requirements.txt:
+#
+#     .venv/bin/pip install -r requirements.txt
+#     .venv/bin/pip install -r requirements-dl.txt
+#
+# Keep the two files separate: --index-url here would also redirect the
+# packages in requirements.txt, and most of them are not on the PyTorch index.
+
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1+cpu

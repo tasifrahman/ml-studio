@@ -1,0 +1,20 @@
+# ML Workbench — pinned dependency set.
+# Every pin below was checked against Python 3.14 (cp314) wheels before writing.
+pandas==3.0.6
+numpy==2.5.3
+scipy==1.18.1
+scikit-learn==1.9.1
+matplotlib==3.11.2
+seaborn==0.13.2
+joblib==1.6.0
+PyQt6==6.11.0
+
+# --- optional data formats ---
+openpyxl    # .xlsx / .xlsm / .xlsb
+odfpy       # .ods
+xlrd        # legacy .xls
+pyarrow==26.0.0   # .parquet / .feather, and pandas 3.0's arrow-backed strings
+
+# --- optional gradient boosters ---
+xgboost==3.4.1
+lightgbm==4.7.0
