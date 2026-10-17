@@ -10,6 +10,21 @@ uncertainty/reliability by Monte-Carlo) and Excel/Word export.
 > The project lives in a directory whose name contains a space:
 > `"ML Workbench DL/"`. Quote it in every shell command.
 
+
+## Environment
+
+- Python 3.14, PyQt6 6.11, pandas 3.0, numpy 2.5, scikit-learn 1.9,
+  matplotlib 3.11, xgboost, lightgbm, openpyxl …
+- PyTorch 2.14.1 (CPU-only build) for the three neural networks
+- Install from source in two steps, so the torch `--index-url` does not
+  misdirect the base packages:
+
+```sh
+./.venv/bin/pip install -r requirements.txt
+./.venv/bin/pip install -r requirements-dl.txt
+```
+
+
 ## Run from source
 
 Everything is run from this directory so that `import core` and `import gui` resolve:
@@ -50,19 +65,6 @@ installation a `ML Studio` entry appears in the applications menu, and the
 launcher is available at `/usr/bin/ml-studio`. The package is
 self-contained: it ships the bundled Python virtual environment at
 `/opt/mlstudio`, so no other Python packages are needed on the target machine.
-
-## Environment
-
-- Python 3.14, PyQt6 6.11, pandas 3.0, numpy 2.5, scikit-learn 1.9,
-  matplotlib 3.11, xgboost, lightgbm, openpyxl …
-- PyTorch 2.14.1 (CPU-only build) for the three neural networks
-- Install from source in two steps, so the torch `--index-url` does not
-  misdirect the base packages:
-
-```sh
-./.venv/bin/pip install -r requirements.txt
-./.venv/bin/pip install -r requirements-dl.txt
-```
 
 ## Project layout
 
