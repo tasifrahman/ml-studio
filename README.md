@@ -1,6 +1,6 @@
 # ML Studio
 
-THIS IS TOTALLY AI (JUST THE IDEA IS ORIGINAL)
+THE CODE IS TOTALLY AI (JUST THE IDEA IS ORIGINAL)
 
 An end-to-end machine-learning workbench for tabular data, built on PyQt6,
 pandas, scikit-learn, and (optionally) CPU-only PyTorch. It walks you through
